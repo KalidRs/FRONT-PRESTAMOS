@@ -11,7 +11,7 @@ const Login = () => {
 
   const handleLogin = async () => {
     try {
-      const response = await fetch('https://integradora-backend-linux.onrender.com/auth/login', {
+      const response = await fetch('https://api-linux-prestamos.onrender.com/auth/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

@@ -29,7 +29,7 @@ const Usuarios = () => {
   useEffect(() => {
     const fetchUsuarios = async () => {
       try {
-        const response = await fetch('https://integradora-backend-linux.onrender.com/user/', {
+        const response = await fetch('https://api-linux-prestamos.onrender.com/user/', {
           headers: {
             'Authorization': `Bearer ${localStorage.getItem('token')}`
           }
@@ -59,7 +59,7 @@ const Usuarios = () => {
     }
 
     try {
-      const response = await fetch('https://integradora-backend-linux.onrender.com/user/', {
+      const response = await fetch('https://api-linux-prestamos.onrender.com/user/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -100,7 +100,7 @@ const Usuarios = () => {
         return;
       }
 
-      const response = await fetch(`https://integradora-backend-linux.onrender.com/user/${selectedUser.id}`, {
+      const response = await fetch(`https://api-linux-prestamos.onrender.com/user/${selectedUser.id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -124,7 +124,7 @@ const Usuarios = () => {
 
 
   const handleDeleteUser = async (id) => {
-    const response = await fetch(`https://integradora-backend-linux.onrender.com/user/${id}`, {
+    const response = await fetch(`https://api-linux-prestamos.onrender.com/user/${id}`, {
       method: 'DELETE',
       headers: {
         'Authorization': `Bearer ${localStorage.getItem('token')}`

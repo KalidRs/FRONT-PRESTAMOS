@@ -28,7 +28,7 @@ const Loans = () => {
 
   // Fetch loans from API
   useEffect(() => {
-    fetch('https://integradora-backend-linux.onrender.com/loan/', {
+    fetch('https://api-linux-prestamos.onrender.com/loan/', {
       method: 'GET',
       headers: {
         'Authorization': `Bearer ${token}`,
@@ -44,7 +44,7 @@ const Loans = () => {
   useEffect(() => {
     const fetchUsuarios = async () => {
       try {
-        const response = await fetch('https://integradora-backend-linux.onrender.com/user', {
+        const response = await fetch('https://api-linux-prestamos.onrender.com/user', {
           headers: {
             'Authorization': `Bearer ${token}`
           }
@@ -65,7 +65,7 @@ const Loans = () => {
 
   // Fetch materiales from API
   useEffect(() => {
-    fetch('https://integradora-backend-linux.onrender.com/material/', {
+    fetch('https://api-linux-prestamos.onrender.com/material/', {
       headers: {
         'Authorization': `Bearer ${token}`,
       },
@@ -107,7 +107,7 @@ const Loans = () => {
     console.log("🔹 Enviando datos al backend:", JSON.stringify(updatedLoan));
 
     try {
-      const response = await fetch(`https://integradora-backend-linux.onrender.com/loan/${selectedLoan.id}`, {
+      const response = await fetch(`https://api-linux-prestamos.onrender.com/loan/${selectedLoan.id}`, {
         method: 'PUT',
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -146,7 +146,7 @@ const Loans = () => {
     console.log("Datos enviados al backend:", JSON.stringify(loanToAdd));
 
     try {
-      const response = await fetch('https://integradora-backend-linux.onrender.com/loan/', {
+      const response = await fetch('https://api-linux-prestamos.onrender.com/loan/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -176,7 +176,7 @@ const Loans = () => {
   };
 
   const handleDeleteLoan = async (id) => {
-    const response = await fetch(`https://integradora-backend-linux.onrender.com/loan/${id}`, {
+    const response = await fetch(`https://api-linux-prestamos.onrender.com/loan/${id}`, {
       method: 'DELETE',
       headers: {
         'Authorization': `Bearer ${localStorage.getItem('token')}`

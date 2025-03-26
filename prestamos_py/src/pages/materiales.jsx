@@ -26,7 +26,7 @@ const Materiales = () => {
 
   // Obtener los materiales desde la API
   useEffect(() => {
-    fetch('https://integradora-backend-linux.onrender.com/material/', {
+    fetch('https://api-linux-prestamos.onrender.com/material/', {
       headers: {
         'Authorization': `Bearer ${token}`,
       },
@@ -43,7 +43,7 @@ const Materiales = () => {
 
   const handleSaveEdit = () => {
     const updatedMaterial = selectedMaterial;
-    fetch(`https://integradora-backend-linux.onrender.com//material/${selectedMaterial.ID_Material}/`, {
+    fetch(`https://api-linux-prestamos.onrender.com/material/${selectedMaterial.ID_Material}/`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
@@ -61,7 +61,7 @@ const Materiales = () => {
 
   const handleSaveNewMaterial = () => {
     const materialToAdd = { ...newMaterial };
-    fetch('https://integradora-backend-linux.onrender.com/material/', {
+    fetch('https://api-linux-prestamos.onrender.com/material/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -86,7 +86,7 @@ const Materiales = () => {
     }
   
     try {
-      const response = await fetch(`https://integradora-backend-linux.onrender.com/material/${id}`, {
+      const response = await fetch(`https://api-linux-prestamos.onrender.com/material/${id}`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('authToken')}`
